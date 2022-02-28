@@ -8,6 +8,7 @@ class Dataset:
         self.file_name = file_name
         self.x = None
         self.y = None
+        self.data_size: int = 0
         self._get_data()
 
     def _get_data(self):
@@ -24,7 +25,8 @@ class Dataset:
                 temp_y.append(float(s[1]))
         self.x = np.array(temp_x)
         self.y = np.array(temp_y)
-        print(f"==>#Datapoints: {len(temp_x)}")
+        self.data_size = len(temp_x)
+        print(f"==>#Datapoints: {self.data_size}")
 
     def get_data_x(self):
         return self.x
@@ -32,8 +34,15 @@ class Dataset:
     def get_data_y(self):
         return self.y
 
+    def get_design_matrix(self, n:int =1):
+        # made m=#data by n design matrix
+        A = np.ones((self.data_size, n))
+        for exp in range(1, n):
+            A[ :,exp] = A[ :,exp-1] * self.x
+        return A
+
 
 if __name__ == "__main__":
-    pass
-    # DataSet("../data/", "testfile.txt")
-    # print(os.path.isfile(""))
+    d = Dataset("../data/", "testfile.txt")
+    a = d.get_design_matrix(3)
+    print(a)
