@@ -8,4 +8,4 @@ def lse(A:np.ndarray , b, lamb):
     # TODO: w = inverse(A.T@A+lambI)@A.T@b (closed form)
     # TODO: cal loss
     # TODO: return w, loss
-   pass
+    pass
