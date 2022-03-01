@@ -23,8 +23,8 @@ class Dataset:
                 s = s.split(",")
                 temp_x.append(float(s[0]))
                 temp_y.append(float(s[1]))
-        self.x = np.array(temp_x)
-        self.y = np.array(temp_y)
+        self.x = np.array(temp_x, dtype=float)
+        self.y = np.array(temp_y, dtype=float)
         self.data_size = len(temp_x)
         print(f"==>#Datapoints: {self.data_size}")
 
