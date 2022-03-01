@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 from config import constant
 from data_process import dataset
 from method import lse
+from print_process import pretty_output
 
 file_name = input("The file name:")
 n = int(input("n:"))
@@ -14,4 +15,4 @@ A = test_data.get_design_matrix(n)
 b = test_data.get_data_y()
 
 lse_w, lse_loss = lse(A, b, lamb)
-print()
+pretty_output(lse_w, lse_loss, method="lse")
