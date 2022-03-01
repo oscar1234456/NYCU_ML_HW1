@@ -13,4 +13,6 @@ def lse(A, b, lamb):
     w = inverse(A.T@A+lambI)@A.T@b
     # TODO: cal loss
     # TODO: return w, loss
-    return w
+    final = A@w
+    loss = np.sum(np.power(final-b, 2))
+    return w, loss

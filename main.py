@@ -13,5 +13,5 @@ x1 = test_data.get_data_x()
 A = test_data.get_design_matrix(n)
 b = test_data.get_data_y()
 
-w = lse(A, b, lamb)
+lse_w, lse_loss = lse(A, b, lamb)
 print()
