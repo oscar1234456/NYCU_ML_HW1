@@ -43,6 +43,6 @@ class Dataset:
 
 
 if __name__ == "__main__":
-    d = Dataset("../data/", "testfile.txt")
+    d = Dataset("../data/", "test1.txt")
     a = d.get_design_matrix(3)
     print(a)

@@ -21,3 +21,5 @@ while True:
     pretty_output(lse_w, lse_loss, method="lse")
     pretty_output(newthon_w, newthon_loss, method="newthon")
     pretty_plot(test_datapoint_x, test_datapoint_b, lse_w, newthon_w)
+
+    print("---next run---")
