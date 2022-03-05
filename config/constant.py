@@ -1,3 +1,3 @@
 DATA_FILE_PATH = "./data/"
 TOLERANCE = 1e-5
-MAX_Iter = 200000000
+MAX_Iter = 20000
