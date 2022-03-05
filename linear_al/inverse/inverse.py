@@ -20,6 +20,7 @@ def lower_matrix_inverse(L):
     # L must be a square matrix (all permutation well, and all diagonal elements are 1)
     L_row_len, L_col_len = L.shape  # the lengths of row and col should be the same
     right_matrix = np.identity(L_row_len)
+    # Gaussian-Jordan process
     for now_focus_pivot in range(L_col_len - 1):
         for row_cursor in range(now_focus_pivot + 1, L_row_len):
             multiplier = L[row_cursor, now_focus_pivot]
@@ -32,6 +33,7 @@ def upper_matrix_inverse(U):
     # U must be a square matrix (all permutation well, and all diagonal elements are 1)
     U_row_len, U_col_len = U.shape # the lengths of row and col should be the same
     right_matrix = np.identity(U_row_len)
+    # Gaussian-Jordan process
     for now_focus_pivot in range(U_col_len-1, 0, -1):
         for row_cursor in range(now_focus_pivot-1, -1, -1):
             multiplier = U[row_cursor, now_focus_pivot]

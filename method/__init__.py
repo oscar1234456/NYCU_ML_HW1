@@ -1,2 +1,2 @@
 from .lse import lse
-from .newthon import newthon
+from .newton import newton
